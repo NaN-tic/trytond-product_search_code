@@ -12,22 +12,16 @@ if os.path.isdir(DIR):
 
 import unittest
 import trytond.tests.test_tryton
-from trytond.tests.test_tryton import test_view, test_depends
+from trytond.tests.test_tryton import test_depends
 
 
-class HellowordTestCase(unittest.TestCase):
+class ProductSearchCodeTestCase(unittest.TestCase):
     '''
-    Test Helloword module.
+    Test Product Search Code module.
     '''
 
     def setUp(self):
         trytond.tests.test_tryton.install_module('product_search_code')
-
-    def test0005views(self):
-        '''
-        Test views.
-        '''
-        test_view('product_search_code')
 
     def test0006depends(self):
         '''
@@ -39,7 +33,7 @@ class HellowordTestCase(unittest.TestCase):
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-        HellowordTestCase))
+        ProductSearchCodeTestCase))
     return suite
 
 if __name__ == '__main__':
