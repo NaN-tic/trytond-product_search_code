@@ -8,7 +8,6 @@ __metaclass__ = PoolMeta
 
 
 class Template:
-    "Product Template"
     __name__ = "product.template"
 
     @classmethod
