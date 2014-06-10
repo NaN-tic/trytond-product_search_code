@@ -1,4 +1,5 @@
 Product Search Code Module
 ##########################
 
-The product_search_code module search in Product Template by code
+* Search by code in product template
+* Add keyword to template to product
