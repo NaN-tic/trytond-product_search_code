@@ -18,4 +18,4 @@ class Template:
         if products:
             return [('id', 'in', map(int, [product.template.id
                     for product in products]))]
-        return [('name',) + tuple(clause[1:])]
+        return super(Template, cls).search_rec_name(name, clause)
