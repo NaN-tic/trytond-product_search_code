@@ -6,8 +6,7 @@ from trytond.pool import Pool, PoolMeta
 __all__ = ['Template']
 
 
-class Template:
-    __metaclass__ = PoolMeta
+class Template(metaclass=PoolMeta):
     __name__ = "product.template"
 
     @classmethod
@@ -16,6 +15,5 @@ class Template:
                 ('code',) + tuple(clause[1:])
                 ], order=[])
         if products:
-            return [('id', 'in', map(int, [product.template.id
-                    for product in products]))]
+            return [('id', 'in', [x.template.id for x in products])]
         return super(Template, cls).search_rec_name(name, clause)
